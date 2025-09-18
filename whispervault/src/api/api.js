@@ -11,7 +11,7 @@ API.login = (data) => API.post("/login", data);
 API.getUser = () => API.get("/getuser");
 
 // Posts
-API.getAllPosts = () => API.get("/home");
+API.getAllPosts = () => API.get("/");
 API.getMyPosts = () => API.get("/myMessages");
 API.createPost = (data) => API.post("/createPost", data);
 API.editPost = (data) => API.put("/editPost", data);

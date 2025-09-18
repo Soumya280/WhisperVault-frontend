@@ -19,7 +19,7 @@ const CreatePost = ({ onClose }) => {
     setError("");
     try {
       await API.createPost(formData);
-      navigate("/home");
+      navigate("/");
       if (onClose) onClose();
     } catch (err) {
       setError("Failed to create post. Please try again.");

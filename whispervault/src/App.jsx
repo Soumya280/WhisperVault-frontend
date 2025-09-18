@@ -31,7 +31,7 @@ const App = () => (
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<Home />} /> {/* Public route */}
+        <Route path="/" element={<Home />} /> {/* Public route */}
         <Route
           path="/myposts"
           element={
@@ -56,7 +56,7 @@ const App = () => (
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   </AuthProvider>

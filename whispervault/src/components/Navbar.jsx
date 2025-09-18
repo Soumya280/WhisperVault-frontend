@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* Left Section: Logo and Navigation */}
         <div className="nav-left">
           {/* Logo */}
-          <Link to={"/home"} className="logo-link">
+          <Link to={"/"} className="logo-link">
             <div className="logo">
               <div className="logo-icon">
                 <span>W</span>

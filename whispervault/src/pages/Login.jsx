@@ -52,7 +52,7 @@ const Login = () => {
 
     try {
       await handleLogin(credentials);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       setError("Login failed. Check your credentials.");
     } finally {
