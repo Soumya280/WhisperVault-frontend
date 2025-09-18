@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff: Arial, Helvetica, sans-serif;
+  --ff2: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --p: 1rem/1.5em var(--ff);
+  --h1: 600 3rem/1.2em var(--ff2);
+  --h2: 600 2rem/1.2em var(--ff2);
+  --h3: 400 1.5rem/1.2em var(--ff);
+  --font-dark: oklch(0.15 0.02 340);
+
+  /* oklch */
+  --bg-dark: oklch(0.1 0.02 340);
+  --bg: oklch(0.15 0.02 340);
+  --bg-light: oklch(0.2 0.02 340);
+  --text: oklch(0.96 0.04 340);
+  --text-muted: oklch(0.76 0.04 340);
+  --highlight: oklch(0.5 0.04 340);
+  --border: oklch(0.4 0.04 340);
+  --border-muted: oklch(0.3 0.04 340);
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+
+  /* common */
+  --primary: oklch(66.017% 0.22934 35.391);
+  --secondary: oklch(56.93% 0.16428 250.723);
+  --primary-hover: oklch(70.529% 0.2168 37.325);
+}
+
+body.light {
+  /* oklch */
+  --bg-dark: oklch(0.92 0.065 311);
+  --bg: oklch(0.96 0.065 311);
+  --bg-light: oklch(1 0.065 311);
+  --text: oklch(0.15 0.13 311);
+  --text-muted: oklch(0.4 0.13 311);
+  --highlight: oklch(1 0.13 311);
+  --border: oklch(0.6 0.13 311);
+  --border-muted: oklch(0.7 0.13 311);
+  --danger: oklch(0.5 0.13 30);
+  --warning: oklch(0.5 0.13 100);
+  --success: oklch(0.5 0.13 160);
+  --info: oklch(0.5 0.13 260);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font: var(--p);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

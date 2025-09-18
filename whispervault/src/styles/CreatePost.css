@@ -1,0 +1,147 @@
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: oklch(0% 0 0 / 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal {
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 8px;
+  width: 600px;
+  max-width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.modal-subtitle {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-muted, #666);
+}
+
+.username {
+  font-weight: 500;
+  color: var(--primary, #ff4500);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-muted, #666);
+  cursor: pointer;
+}
+
+/* Body */
+.modal-body {
+  padding: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 6px;
+  font: inherit;
+  resize: vertical;
+  background: var(--input-bg);
+  color: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary, #ff4500);
+  outline: none;
+}
+
+/* Error */
+.error-box {
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  background: #ffe5e5;
+  border: 1px solid #ff9999;
+  border-radius: 6px;
+  color: #d60000;
+  font-size: 0.9rem;
+}
+
+/* Footer actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.btn-primary {
+  background: var(--primary, #ff4500);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover, #ff5414);
+}
+
+.btn-secondary {
+  background: var(--bg-light, #f6f6f6);
+  color: var(--text, #111);
+  border: 1px solid var(--border, #ccc);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-lighter, #eee);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
