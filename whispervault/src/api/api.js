@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL: " https://whispervault-backend-5g7q.onrender.com",
-  withCredentials: true, // send cookies for session auth
+  withCredentials: true,
 });
 
 // Auth
