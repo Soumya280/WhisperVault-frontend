@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: " https://whispervault-backend-5g7q.onrender.com",
+  baseURL: "https://whispervault-backend-5g7q.onrender.com",
   withCredentials: true,
 });
 
