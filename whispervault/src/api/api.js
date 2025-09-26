@@ -5,12 +5,28 @@ const API = axios.create({
   withCredentials: true,
 });
 
-// Auth
+// CSRF Token handling for Chromium browsers
+API.interceptors.request.use((config) => {
+  if (config.method !== "get" && config.method !== "GET") {
+    // Get CSRF token from cookie
+    const csrfToken = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("XSRF-TOKEN="))
+      ?.split("=")[1];
+
+    if (csrfToken) {
+      config.headers["X-XSRF-TOKEN"] = csrfToken;
+    }
+  }
+  return config;
+});
+
+// Auth endpoints
 API.signup = (data) => API.post("/signup", data);
 API.login = (data) => API.post("/login", data);
 API.getUser = () => API.get("/getuser");
 
-// Posts
+// Posts endpoints
 API.getAllPosts = () => API.get("/");
 API.getMyPosts = () => API.get("/myMessages");
 API.createPost = (data) => API.post("/createPost", data);
