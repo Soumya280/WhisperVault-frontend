@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
     try {
       const res = await API.getUser();
       setUser(res.data);
+      console.log(res.data);
     } catch (err) {
       setUser(null);
     } finally {
@@ -23,12 +24,16 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const handleLogin = async (credentials) => {
-    await API.login(credentials);
-    await fetchUser();
+    try {
+      await API.login(credentials);
+      await fetchUser();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleLogout = async () => {
-    await API.get("/logout");
+    await API.logout();
     setUser(null);
   };
 
