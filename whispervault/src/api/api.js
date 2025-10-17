@@ -5,17 +5,6 @@ const API = axios.create({
   withCredentials: true, // send cookies for session auth
 });
 
-API.interceptors.request.use((config) => {
-  const csrfToken = document.cookie.replace(
-    /(?:(?:^|.*;\s*)XSRF-TOKEN\s*\=\s*([^;]*).*$)|^.*$/,
-    "$1"
-  );
-  if (csrfToken) {
-    config.headers["X-XSRF-TOKEN"] = csrfToken;
-  }
-  return config;
-});
-
 // Auth
 API.signup = (data) => API.post("/signup", data);
 API.login = (data) => API.post("/login", data);
