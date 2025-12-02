@@ -5,7 +5,7 @@ import API from "../api/api";
 import "../styles/CreatePost.css";
 
 const CreatePost = ({ onClose }) => {
-  const { user, handleLogout } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ title: "", content: "" });
   const [error, setError] = useState("");

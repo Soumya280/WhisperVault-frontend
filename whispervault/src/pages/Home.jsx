@@ -299,7 +299,7 @@ const Home = () => {
               <li>1. Be respectful to others</li>
               <li>2. No spam or self-promotion</li>
               <li>3. Stay on topic</li>
-              <li>4. Use appropriate flair</li>
+              <li>4. Do not post false info.</li>
             </ul>
           </div>
 
