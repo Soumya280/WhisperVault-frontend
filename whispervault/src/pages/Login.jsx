@@ -181,7 +181,11 @@ const Login = () => {
           {/* Submit Button */}
           <div className="submit-button-section">
             <button type="submit" className="login-button" disabled={isLoading}>
-              {isLoading ? <div className="loading-spinner"></div> : "Sign In"}
+              {isLoading ? (
+                <div className="loading-spinner-button"></div>
+              ) : (
+                "Sign In"
+              )}
             </button>
             <button
               type="button"
