@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import "../styles/Login.css";
+import "../styles/Form.css";
 
 const Login = () => {
   const { handleLogin } = useContext(AuthContext);
@@ -24,7 +25,7 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  const fillDemoCredentials = () => {
+  const fillDemoData = () => {
     setCredentials({
       username: "demo_user",
       password: "demo123",
@@ -178,16 +179,18 @@ const Login = () => {
           )}
 
           {/* Submit Button */}
-          <button type="submit" className="login-button" disabled={isLoading}>
-            {isLoading ? (
-              <>
-                <span>Signing In...</span>
-                <div className="loading-spinner"></div>
-              </>
-            ) : (
-              "Sign In"
-            )}
-          </button>
+          <div className="submit-button-section">
+            <button type="submit" className="login-button" disabled={isLoading}>
+              {isLoading ? <div className="loading-spinner"></div> : "Sign In"}
+            </button>
+            <button
+              type="button"
+              className="demo-button"
+              onClick={fillDemoData}
+            >
+              Fill Demo Data
+            </button>
+          </div>
         </form>
 
         {/* Footer Links */}
@@ -203,28 +206,6 @@ const Login = () => {
               Forgot your password?
             </a>
           </p>
-        </div>
-
-        {/* Demo Section */}
-        <div className="demo-section">
-          <h3>Demo Credentials</h3>
-          <div className="demo-credentials">
-            <div className="credential">
-              <span>Username:</span>
-              <code>demo_user</code>
-            </div>
-            <div className="credential">
-              <span>Password:</span>
-              <code>demo123</code>
-            </div>
-          </div>
-          <button
-            type="button"
-            className="demo-button"
-            onClick={fillDemoCredentials}
-          >
-            Fill Demo Credentials
-          </button>
         </div>
       </div>
     </div>

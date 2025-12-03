@@ -25,7 +25,8 @@
   --danger: oklch(0.7 0.05 30);
   --warning: oklch(0.7 0.05 100);
   --success: oklch(0.7 0.05 160);
-  --info: oklch(0.7 0.05 260);
+  --info: oklch(0.6 0.05 260);
+  --info-hover: oklch(0.7 0.05 260);
 
   /* common */
   --primary: oklch(66.017% 0.22934 35.391);
@@ -46,7 +47,8 @@ body.light {
   --danger: oklch(0.5 0.13 30);
   --warning: oklch(0.5 0.13 100);
   --success: oklch(0.5 0.13 160);
-  --info: oklch(0.5 0.13 260);
+  --info: oklch(0.6 0.13 260);
+  --info-hover: oklch(0.7 0.13 260);
 }
 
 body {

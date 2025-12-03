@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../api/api";
 import "../styles/Signup.css";
+import "../styles/Form.css";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -282,16 +283,26 @@ const Signup = () => {
           )}
 
           {/* Submit Button */}
-          <button type="submit" className="signup-button" disabled={isLoading}>
-            {isLoading ? (
-              <>
-                <span>Creating Account...</span>
-                <div className="loading-spinner"></div>
-              </>
-            ) : (
-              "Create Account"
-            )}
-          </button>
+          <div className="submit-button-section">
+            <button
+              type="submit"
+              className="signup-button"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <div className="loading-spinner-button"></div>
+              ) : (
+                "Create Account"
+              )}
+            </button>
+            <button
+              type="button"
+              className="demo-button"
+              onClick={fillDemoData}
+            >
+              Fill Demo Data
+            </button>
+          </div>
         </form>
 
         {/* Footer Links */}
@@ -302,32 +313,6 @@ const Signup = () => {
               Sign in
             </a>
           </p>
-        </div>
-
-        {/* Demo Section */}
-        <div className="demo-section">
-          <h3>Demo Data</h3>
-          <div className="demo-credentials">
-            <div className="credential">
-              <span>Email:</span>
-              <code>demo@example.com</code>
-            </div>
-            <div className="credential">
-              <span>Username:</span>
-              <code>demo_user</code>
-            </div>
-            <div className="credential">
-              <span>Alias:</span>
-              <code>DemoUser</code>
-            </div>
-            <div className="credential">
-              <span>Password:</span>
-              <code>demo123</code>
-            </div>
-          </div>
-          <button type="button" className="demo-button" onClick={fillDemoData}>
-            Fill Demo Data
-          </button>
         </div>
       </div>
     </div>

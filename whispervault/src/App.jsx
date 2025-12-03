@@ -31,7 +31,9 @@ const App = () => (
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<Home />} /> {/* Public route */}
+        <Route path="/" element={<Home />} />
+        <Route path="/settings" element={<Settings />} />
+        {/* Private routes */}
         <Route
           path="/myposts"
           element={
@@ -45,14 +47,6 @@ const App = () => (
           element={
             <PrivateRoute>
               <MyProfile />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/settings"
-          element={
-            <PrivateRoute>
-              <Settings />
             </PrivateRoute>
           }
         />
