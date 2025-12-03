@@ -29,6 +29,7 @@ const AuthProvider = ({ children }) => {
       await fetchUser();
     } catch (error) {
       console.log(error);
+      throw error;
     }
   };
 
