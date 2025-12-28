@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
+  // baseURL: "http://localhost:8080",
   baseURL: "https://whispervault-ocqu.onrender.com",
   withCredentials: true, // send cookies for session auth
 });
